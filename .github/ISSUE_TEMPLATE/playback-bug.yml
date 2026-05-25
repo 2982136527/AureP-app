@@ -95,6 +95,24 @@ body:
     validations:
       required: false
 
+  - type: input
+    id: strm_project
+    attributes:
+      label: STRM 项目
+      description: 如果是 STRM，请填写使用的项目名称；不是 STRM 可留空
+      placeholder: 例如 2dland、Alist、Rclone
+    validations:
+      required: false
+
+  - type: input
+    id: cloud_drive
+    attributes:
+      label: 网盘来源
+      description: 如果是 STRM，请填写对应网盘；不是 STRM 可留空
+      placeholder: 例如 阿里云盘、夸克、115、百度网盘
+    validations:
+      required: false
+
   - type: textarea
     id: symptom
     attributes:
