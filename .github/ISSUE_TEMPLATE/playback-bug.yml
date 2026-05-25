@@ -1,0 +1,127 @@
+name: 播放问题反馈
+description: 反馈无法播放、黑屏、卡缓冲、字幕异常、音画异常等问题
+title: "[Playback] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        为了更快定位问题，请尽量把片源、编码、字幕和现象写完整。
+        如果某项不清楚，可以直接写“未知”。
+
+  - type: input
+    id: app_version
+    attributes:
+      label: AureP 版本
+      description: 例如 0.0.10
+      placeholder: 0.0.10
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 设备与系统
+      description: 手机型号、Android 版本
+      placeholder: 例如 Xiaomi 14 / Android 15
+    validations:
+      required: true
+
+  - type: input
+    id: emby_server
+    attributes:
+      label: Emby / 服务端信息
+      description: 可填写 Emby 版本、是否 STRM、是否 302、是否直连
+      placeholder: 例如 Emby 4.x / STRM / 302 直链
+    validations:
+      required: false
+
+  - type: dropdown
+    id: media_type
+    attributes:
+      label: 媒体类型
+      options:
+        - 电影
+        - 剧集
+        - 动画
+        - 纪录片
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: container
+    attributes:
+      label: 片源格式 / 封装
+      description: 例如 mkv、mp4、ts、strm
+      placeholder: 例如 mkv
+    validations:
+      required: true
+
+  - type: input
+    id: video_codec
+    attributes:
+      label: 视频编码
+      description: 例如 H.264 / HEVC / AV1 / HDR10 / Dolby Vision
+      placeholder: 例如 HEVC 10bit HDR10
+    validations:
+      required: true
+
+  - type: input
+    id: audio_codec
+    attributes:
+      label: 音频编码
+      description: 例如 AAC / AC3 / EAC3 / DTS / TrueHD
+      placeholder: 例如 EAC3 5.1
+    validations:
+      required: false
+
+  - type: input
+    id: subtitle
+    attributes:
+      label: 字幕情况
+      description: 是否有内嵌字幕、外挂字幕，字幕语言是什么
+      placeholder: 例如 内嵌中文字幕 + 外挂 ASS
+    validations:
+      required: false
+
+  - type: input
+    id: playback_path
+    attributes:
+      label: 播放链路
+      description: 例如 直链 / 302 / 中转 / 不确定
+      placeholder: 例如 302 直链
+    validations:
+      required: false
+
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 具体表现
+      description: 请尽量明确描述现象
+      placeholder: 例如 黑屏但有声音 / 一直显示正在缓冲 / 切字幕后卡住 / 只有第 2 集无法播放
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 按顺序写一下如何触发
+      placeholder: |
+        1. 打开某个媒体
+        2. 点击播放
+        3. 切换到某个字幕/播放方式
+        4. 出现问题
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 截图、日志或补充信息
+      description: 如果方便，请附上截图、logcat、服务端日志或媒体信息截图
+      placeholder: 可粘贴日志、截图说明、MediaInfo 信息等
+    validations:
+      required: false
