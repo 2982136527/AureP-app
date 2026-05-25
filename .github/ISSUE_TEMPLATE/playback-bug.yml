@@ -100,7 +100,7 @@ body:
     attributes:
       label: STRM 项目
       description: 如果是 STRM，请填写使用的项目名称；不是 STRM 可留空
-      placeholder: 例如 2dland、Alist、Rclone
+      placeholder: 例如 Alist、Rclone
     validations:
       required: false
 
